@@ -1,6 +1,6 @@
 <template>
   <div class="watchlist-card">
-    <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
   </div>
 </template>
 
