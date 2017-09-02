@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <watchlist-card></watchlist-card>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+  import WatchlistCard from './components/WatchlistCard'
 
-export default {
-  name: 'app',
-  components: {
-    Hello
+  export default {
+    name: 'app',
+    components: {
+      WatchlistCard
+    }
   }
-}
 </script>
 
 <style>
