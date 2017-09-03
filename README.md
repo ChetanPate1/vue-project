@@ -1,21 +1,31 @@
 # vue-project
+### Converting angular component to react
+I will be converting watchlist card from my toWatch project
 
-> A Vue.js project
+### Process
+- Identify all sub components of watchlist card
+- Structure is similar to angular directives
+- Fit it all together and test it using static json data (same structure as angular version)
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+### Component Breakdown
+```html
+<watchlist-card>
+  <more-button></more-button>
+  <slide-out-panel>
+    <tabs>
+      <tab-buttons></tab-buttons>
+      <tab-panels></tab-panels>
+    </tabs>
+  </slide-out-panel>
+  <frost-glass>
+    <countdown-timer></countdown-timer>
+  </frost-glass>      
+</watchlist-card>
 ```
+<!--
+### Converted Component
+[In progress...](https://chetanpate1.github.io/vue-project/) -->
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### License
+[MIT License](https://github.com/ChetanPate1/vue-project/blob/master/LICENCE)
+© Chetan Patel
