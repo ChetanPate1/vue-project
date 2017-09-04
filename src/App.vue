@@ -1,13 +1,13 @@
 <template>
   <div id='app'>
-
-    <watchlist-card
-      :title="watchlist.series"
-      :sub-heading="watchlist.subheading"
-      :on="watchlist.on"
-      :img-src="watchlist.imgsrc" >
-    </watchlist-card>
-
+    <div class="container">
+      <watchlist-card
+        :title="watchlist.series"
+        :sub-heading="watchlist.subheading"
+        :on="watchlist.on"
+        :img-src="watchlist.imgsrc" >
+      </watchlist-card>
+    </div>
   </div>
 </template>
 
@@ -386,7 +386,6 @@
       WatchlistCard
     }
   }
-
 </script>
 
 <style src='./assets/css/main.css'></style>
