@@ -1,12 +1,14 @@
 <template>
   <div id='app'>
     <div class="container">
+
       <watchlist-card
         :title="watchlist.series"
         :sub-heading="watchlist.subheading"
         :on="watchlist.on"
         :img-src="watchlist.imgsrc" >
       </watchlist-card>
+
     </div>
   </div>
 </template>

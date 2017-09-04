@@ -7,11 +7,13 @@
 
     <h6>Next <small>Aired Episode</small></h6>
 
+    <more-button ></more-button>
     <frost-glass :imgSrc="imgSrc"></frost-glass>
   </div>
 </template>
 
 <script>
+  import MoreButton from './MoreButton';
   import FrostGlass from './FrostGlass';
 
   export default {
@@ -23,7 +25,8 @@
       imgSrc: String
     },
     components: {
-      FrostGlass
+      FrostGlass,
+      MoreButton
     }
   }
 </script>
