@@ -11,15 +11,8 @@ I will be converting watchlist card from my toWatch project
 ```html
 <watchlist-card>
   <more-button></more-button>
-  <slide-out-panel>
-    <tabs>
-      <tab-buttons></tab-buttons>
-      <tab-panels></tab-panels>
-    </tabs>
-  </slide-out-panel>
-  <frost-glass>
-    <countdown-timer></countdown-timer>
-  </frost-glass>      
+  <slide-out-panel></slide-out-panel>
+  <frost-glass></frost-glass>      
 </watchlist-card>
 ```
 <!--
