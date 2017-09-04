@@ -1,14 +1,19 @@
 <template>
   <div id='app'>
 
-    <watchlist-card :title="watchlist.series" :sub-heading="watchlist.subheading" :on="watchlist.on" :img-src="watchlist.imgsrc" >
-
+    <watchlist-card
+      :title="watchlist.series"
+      :sub-heading="watchlist.subheading"
+      :on="watchlist.on"
+      :img-src="watchlist.imgsrc" >
     </watchlist-card>
+
   </div>
 </template>
 
 <script>
-  import WatchlistCard from './components/WatchlistCard'
+  import WatchlistCard from './components/WatchlistCard';
+
   var watchlist = {
     'lastUpdated':1503307808437,
     'on':{

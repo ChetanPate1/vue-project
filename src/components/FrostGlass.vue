@@ -1,6 +1,6 @@
 <template>
   <div class="frost-glass">
-    <div className="frost" :style="{ backgroundImage: 'url('+ imgSrc +')' }" ></div>
+    <div class="frost" :style="{ backgroundImage: 'url('+ imgSrc +')' }" ></div>
   </div>
 </template>
 

@@ -6,10 +6,14 @@
     <h5>On Season {{ on.season }} Episode {{ on.episode }}</h5>
 
     <h6>Next <small>Aired Episode</small></h6>
+
+    <frost-glass :imgSrc="imgSrc"></frost-glass>
   </div>
 </template>
 
 <script>
+  import FrostGlass from './FrostGlass';
+
   export default {
     name: 'WatchlistCard',
     props: {
@@ -17,6 +21,9 @@
       subHeading: String,
       on: Object,
       imgSrc: String
+    },
+    components: {
+      FrostGlass
     }
   }
 </script>
