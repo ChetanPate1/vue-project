@@ -1,5 +1,5 @@
 <template>
-  <button class="more-button" type="button" name="more" @click="toggle()" :class="{ 'open' : open }">
+  <button class="more-button" type="button" name="more" :class="{ 'open' : open }">
     <span class="dripicons-plus"></span>
     <span class="behind">{{ behind }}</span>
   </button>
@@ -11,22 +11,19 @@
   export default {
     name: 'MoreButton',
     props: {
-      seasons: Object,
+      open: Boolean,
+      unWatched: Object,
       currentSeason: String
     },
     data() {
       return {
-        open: false,
         behind: 0
       }
     },
     mounted() {
-      this.behindCount(this.seasons, this.currentSeason);
+      this.behindCount(this.unWatched, this.currentSeason);
     },
     methods: {
-      toggle() {
-        this.open = !this.open;
-      },
       behindCount(seasons, currentSeason){
         let seasonsLimit = objSize(seasons) + currentSeason;
         let count = 0, j = 1, totalEpisodes = 0, season;

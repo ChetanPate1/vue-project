@@ -1,19 +1,17 @@
 <template>
   <div class="watchlist-card" :style="{ backgroundImage: 'url('+ imgSrc +')' }" >
-
     <h2>{{ title }}</h2>
     <h4>{{ subHeading }}</h4>
     <h5>On Season {{ on.season }} Episode {{ on.episode }}</h5>
-
     <h6>Next <small>Aired Episode</small></h6>
 
-    <more-button :seasons="watchlist.unwatched" :current-season="on.season" ></more-button>
-    <frost-glass :imgSrc="imgSrc"></frost-glass>
+    <more-panel :seasons="watchlist.unwatched" :current-season="on.season"></more-panel>
+    <frost-glass :img-src="imgSrc"></frost-glass>
   </div>
 </template>
 
 <script>
-  import MoreButton from './MoreButton';
+  import MorePanel from './MorePanel';
   import FrostGlass from './FrostGlass';
 
   export default {
@@ -26,8 +24,8 @@
       watchlist: Object
     },
     components: {
-      FrostGlass,
-      MoreButton
+      MorePanel,
+      FrostGlass
     }
   }
 </script>
