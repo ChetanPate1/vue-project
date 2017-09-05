@@ -7,7 +7,7 @@
 
     <h6>Next <small>Aired Episode</small></h6>
 
-    <more-button ></more-button>
+    <more-button :seasons="watchlist.unwatched" :current-season="on.season" ></more-button>
     <frost-glass :imgSrc="imgSrc"></frost-glass>
   </div>
 </template>
@@ -22,7 +22,8 @@
       title: String,
       subHeading: String,
       on: Object,
-      imgSrc: String
+      imgSrc: String,
+      watchlist: Object
     },
     components: {
       FrostGlass,

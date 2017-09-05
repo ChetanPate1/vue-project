@@ -6,7 +6,8 @@
         :title="watchlist.series"
         :sub-heading="watchlist.subheading"
         :on="watchlist.on"
-        :img-src="watchlist.imgsrc" >
+        :img-src="watchlist.imgsrc"
+        :watchlist="watchlist" >
       </watchlist-card>
 
     </div>
