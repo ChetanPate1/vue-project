@@ -7,7 +7,7 @@
     name: 'TabPanel',
     props: {
       active: Boolean,
-      content: Object
+      content: Array
     }
   }
 </script>
