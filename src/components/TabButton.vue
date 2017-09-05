@@ -6,7 +6,7 @@
   export default {
     name: 'TabButton',
     props: {
-      name: Number,
+      name: String,
       active: Boolean
     }
   }

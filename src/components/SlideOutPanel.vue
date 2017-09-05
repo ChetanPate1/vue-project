@@ -12,7 +12,8 @@
     props: {
       open: Boolean,
       unWatched: Object,
-      currentSeason: String
+      currentSeason: String,
+      currentEpisode: Number
     },
     components: {
       Tabs
