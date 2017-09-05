@@ -1,6 +1,6 @@
 <template>
   <div class="slide-out-panel" :class="{ 'open' : open }" >
-    <tabs :seasons="unWatched" :current-tab="currentSeason" ></tabs>
+    <tabs :seasons="unWatched" :current-tab="currentSeason" :current-episode="currentEpisode" ></tabs>
   </div>
 </template>
 

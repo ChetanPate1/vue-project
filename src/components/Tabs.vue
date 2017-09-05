@@ -9,10 +9,12 @@
       </tab-button>
     </div>
 
-    <div class="tabs-panels">
+    <div class="tab-panels">
       <tab-panel v-for="season in seasons"
         :key="season[0]"
         :content="season"
+        :current-season="currentTab"
+        :current-episode="currentEpisode"
         :active="isTabSelected(season[0])" >
       </tab-panel>
     </div>
@@ -26,11 +28,14 @@
 
   export default {
     name: 'Tabs',
-    props: [ 'seasons', 'currentTab' ],
+    props: [ 'seasons', 'currentTab', 'currentEpisode' ],
     data(){
       return {
-        tabActive: '1'
+        tabActive: ''
       }
+    },
+    mounted(){
+      this.tabActive = this.currentTab;
     },
     methods: {
       tabSelect(tabNumber) {
