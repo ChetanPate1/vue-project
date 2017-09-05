@@ -1,7 +1,7 @@
 <template>
   <div>
     <more-button @click.native="toggleOpen()" :open="open" :un-watched="seasons" :current-season="currentSeason"></more-button>
-    <slide-out-panel :open="open" ></slide-out-panel>
+    <slide-out-panel :un-watched="seasons" :current-season="currentSeason" :open="open" ></slide-out-panel>
   </div>
 </template>
 
