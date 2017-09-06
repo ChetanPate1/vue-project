@@ -28,7 +28,11 @@
 
   export default {
     name: 'Tabs',
-    props: [ 'seasons', 'currentTab', 'currentEpisode' ],
+    props: {
+      seasons: Object,
+      currentTab: String,
+      currentEpisode: Number
+    },
     data(){
       return {
         tabActive: ''

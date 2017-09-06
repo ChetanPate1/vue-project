@@ -5,7 +5,11 @@
     <h5>On Season {{ on.season }} Episode {{ on.episode }}</h5>
     <h6>Next <small>Aired Episode</small></h6>
 
-    <more-panel :seasons="watchlist.unwatched" :current-season="on.season" :current-episode="on.episode"></more-panel>
+    <more-panel
+      :seasons="watchlist.unwatched"
+      :current-season="on.season"
+      :current-episode="on.episode">
+    </more-panel>
     <frost-glass :img-src="imgSrc"></frost-glass>
   </div>
 </template>

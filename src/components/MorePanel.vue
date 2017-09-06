@@ -1,7 +1,15 @@
 <template>
   <div>
-    <more-button @click.native="toggleOpen()" :open="open" :un-watched="seasons" :current-season="currentSeason"></more-button>
-    <slide-out-panel :un-watched="seasons" :current-season="currentSeason" :current-episode="currentEpisode" :open="open" ></slide-out-panel>
+    <more-button @click.native="toggleOpen()"
+      :un-watched="seasons"
+      :current-season="currentSeason" :open="open">
+    </more-button>
+
+    <slide-out-panel
+      :un-watched="seasons"
+      :current-season="currentSeason"
+      :current-episode="currentEpisode" :open="open" >
+    </slide-out-panel>
   </div>
 </template>
 
