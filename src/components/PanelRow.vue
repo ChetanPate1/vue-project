@@ -34,23 +34,23 @@
         const season = this.season;
         const currentEpisode = parseInt(this.currentEpisode, 0);
         let isCurrentSeason = this.currentSeason === season[0].toString();
-        var valid = episode === currentEpisode || episode === (currentEpisode - 1);
+        let isOneMoreOrOneLess = episode === currentEpisode || episode === currentEpisode - 1;
+        let seasonKey =  `season_${ season[0] }`;
 
-        if(!isCurrentSeason){
+        console.log('episode', episode, 'currentEpisode', currentEpisode, isOneMoreOrOneLess);
+
+        if(!isCurrentSeason || !this.aired(airDate).isAired || !isOneMoreOrOneLess){
           return;
-          if(!this.aired(airDate).isAired || !valid){
-            return;
-          }
         }
 
-        let seasonKey =  `season_${ season[0] }`;
-        this.countWatched(this.season, this.currentSeason);
         this.$store.commit('toggleWatched', { episode, seasonKey });
+        this.countWatched(this.season, this.currentSeason);
       },
-      countWatched(season, currentSeasonNum) {
+      countWatched(season, currentSeason) {
         let count = 1, j = 1;
         let totalEpisodes = objSize(season);
-        let on = { episode: 1, season: currentSeasonNum };
+        let nextSeason = parseInt(currentSeason, 0) + 1;
+        let on = { episode: 1, season: currentSeason };
 
         for (j; j < totalEpisodes; j++) {
           if(season[j].watched){
@@ -61,7 +61,8 @@
           }
         }
 
-        if(on == objSize(season) - 1){
+        if(count === objSize(season)){
+          on.season = nextSeason.toString();
           on.episode = 1;
         }else {
           on.episode = count;
