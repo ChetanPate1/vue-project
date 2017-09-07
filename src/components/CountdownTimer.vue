@@ -32,7 +32,9 @@
           s: { val: '00', name: 'secs' }
         },
         inSeconds: {
-          now: timeNow() / 1000,
+          now: function() {
+            return timeNow() / 1000
+          },
           day: 86400, hour: 3600, minute: 60
         }
       }
@@ -47,8 +49,8 @@
         let inSeconds = this.inSeconds;
         futureDate = futureDate / 1000;
 
-        let delta = Math.abs(futureDate - inSeconds.now);
-        if(futureDate - inSeconds.now < 0 || !futureDate){
+        let delta = Math.abs(futureDate - inSeconds.now());
+        if(futureDate - inSeconds.now() < 0 || !futureDate){
           this.prettifyTime( [0, 0, 0, 0] );
         }
 
