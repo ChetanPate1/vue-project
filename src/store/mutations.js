@@ -363,5 +363,8 @@ export const state = {
 export const mutations = {
   toggleWatched (state, { episode, seasonKey }) {
     state.watchlist.unwatched[seasonKey][episode].watched = !state.watchlist.unwatched[seasonKey][episode].watched;
+  },
+  setCurrentSeason (state, { on }) {
+    state.watchlist.on = on;
   }
 };

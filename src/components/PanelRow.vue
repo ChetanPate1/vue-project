@@ -16,7 +16,7 @@
 
 <script>
   import { mapMutations } from 'vuex';
-  import { timeNow } from '../HelperFunctions';
+  import { timeNow, objSize } from '../HelperFunctions';
 
   export default {
     name: 'PanelRow',
@@ -27,7 +27,8 @@
     },
     methods: {
       ...mapMutations([
-        'toggleWatched'
+        'toggleWatched',
+        'setCurrentSeason'
       ]),
       watched(episode, airDate){
         const season = this.season;
@@ -43,7 +44,29 @@
         }
 
         let seasonKey =  `season_${ season[0] }`;
+        this.countWatched(this.season, this.currentSeason);
         this.$store.commit('toggleWatched', { episode, seasonKey });
+      },
+      countWatched(season, currentSeasonNum) {
+        let count = 1, j = 1;
+        let totalEpisodes = objSize(season);
+        let on = { episode: 1, season: currentSeasonNum };
+
+        for (j; j < totalEpisodes; j++) {
+          if(season[j].watched){
+            count++;
+          }
+          if (!season[j].watched) {
+            count + 1;
+          }
+        }
+
+        if(on == objSize(season) - 1){
+          on.episode = 1;
+        }else {
+          on.episode = count;
+        }
+        this.$store.commit('setCurrentSeason', { on });
       },
       aired(date) {
         date = parseInt(date, 0);
