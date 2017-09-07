@@ -1,6 +1,5 @@
 export const state = {
   watchlist: {
-    'lastUpdated':1503307808437,
     'on':{
       'episode':1,
       'season':'1'
@@ -359,12 +358,11 @@ export const state = {
         'watched' : false
       } ]
     },
-    'upToDate':false
   }
 };
 
 export const mutations = {
   toggleWatched (state, { episode, seasonKey }) {
-    state.watchlist.unwatched[season][episode].watched = !state.watchlist.unwatched[season][episode].watched;
+    state.watchlist.unwatched[seasonKey][episode].watched = !state.watchlist.unwatched[seasonKey][episode].watched;
   }
 };

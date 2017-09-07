@@ -12,10 +12,10 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
   import { timeNow } from '../HelperFunctions';
 
   export default {
@@ -26,11 +26,14 @@
       currentEpisode: Number
     },
     methods: {
-      watched(key, airDate){
+      ...mapMutations([
+        'toggleWatched'
+      ]),
+      watched(episode, airDate){
         const season = this.season;
         const currentEpisode = parseInt(this.currentEpisode, 0);
         let isCurrentSeason = this.currentSeason === season[0].toString();
-        var valid = key === currentEpisode || key === (currentEpisode - 1);
+        var valid = episode === currentEpisode || episode === (currentEpisode - 1);
 
         if(!isCurrentSeason){
           return;
@@ -39,8 +42,8 @@
           }
         }
 
-        season[key].watched = !season[key].watched;
-        this.season = season;
+        let seasonKey =  `season_${ season[0] }`;
+        this.$store.commit('toggleWatched', { episode, seasonKey });
       },
       aired(date) {
         date = parseInt(date, 0);
