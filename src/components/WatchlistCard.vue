@@ -1,16 +1,16 @@
 <template>
-  <div class="watchlist-card" :style="{ backgroundImage: 'url('+ imgSrc +')' }" >
-    <h2>{{ title }}</h2>
-    <h4>{{ subHeading }}</h4>
-    <h5>On Season {{ on.season }} Episode {{ on.episode }}</h5>
+  <div class="watchlist-card" :style="{ backgroundImage: 'url('+ watchlist.imgsrc +')' }" >
+    <h2>{{ watchlist.series }}</h2>
+    <h4>{{ watchlist.subHeading }}</h4>
+    <h5>On Season {{ watchlist.on.season }} Episode {{ watchlist.on.episode }}</h5>
     <h6>Next <small>Aired Episode</small></h6>
 
     <more-panel
       :seasons="watchlist.unwatched"
-      :current-season="on.season"
-      :current-episode="on.episode">
+      :current-season="watchlist.on.season"
+      :current-episode="watchlist.on.episode">
     </more-panel>
-    <frost-glass :img-src="imgSrc"></frost-glass>
+    <frost-glass :img-src="watchlist.imgsrc"></frost-glass>
   </div>
 </template>
 
@@ -21,10 +21,6 @@
   export default {
     name: 'WatchlistCard',
     props: {
-      title: String,
-      subHeading: String,
-      on: Object,
-      imgSrc: String,
       watchlist: Object
     },
     components: {
