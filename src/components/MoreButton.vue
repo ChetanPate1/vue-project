@@ -1,7 +1,7 @@
 <template>
   <button class="more-button" type="button" name="more" :class="{ 'open' : open }">
     <span class="dripicons-plus"></span>
-    <span class="behind">{{ behind }}</span>
+    <span class="behind">{{ behindCount }}</span>
   </button>
 </template>
 
@@ -15,21 +15,14 @@
       unWatched: Object,
       currentSeason: String
     },
-    data() {
-      return {
-        behind: 0
-      }
-    },
-    mounted() {
-      this.behindCount(this.unWatched, this.currentSeason);
-    },
-    methods: {
-      behindCount(seasons, currentSeason){
-        let seasonsLimit = objSize(seasons) + currentSeason;
+    computed: {
+      behindCount(){
+        let currentSeasonNum = parseInt(this.currentSeason, 0);
+        let seasonsLimit = objSize(this.unWatched) + currentSeasonNum;
         let count = 0, j = 1, totalEpisodes = 0, season;
 
-        for (currentSeason; currentSeason < seasonsLimit; currentSeason++) {
-          season = seasons['season_' + currentSeason];
+        for (currentSeasonNum; currentSeasonNum < seasonsLimit; currentSeasonNum++) {
+          season = this.unWatched['season_' + currentSeasonNum];
           totalEpisodes = objSize(season);
           for (j; j < totalEpisodes; j++) {
             if(!season[j].watched && season[j].airDate - timeNow() < 0){
@@ -39,8 +32,7 @@
           j = 1;
         }
 
-        let behindCount = (count > 0) ? '-'+ count : count;
-        this.behind = behindCount;
+        return (count > 0) ? '-'+ count : count;
       }
     }
   }
