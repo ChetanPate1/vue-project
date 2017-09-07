@@ -1,7 +1,7 @@
 <template>
   <div class="watchlist-card" :style="{ backgroundImage: 'url('+ watchlist.imgsrc +')' }" >
     <h2>{{ watchlist.series }}</h2>
-    <h4>{{ watchlist.subHeading }}</h4>
+    <h4>{{ currentEpisodeName }}</h4>
     <h5>On Season {{ watchlist.on.season }} Episode {{ watchlist.on.episode }}</h5>
     <h6>Next <small>Aired Episode</small></h6>
 
@@ -22,6 +22,12 @@
     name: 'WatchlistCard',
     props: {
       watchlist: Object
+    },
+    computed: {
+      currentEpisodeName() {
+        let on = this.watchlist.on;
+        return this.watchlist.unwatched['season_'+ on.season][on.episode].name;
+      }
     },
     components: {
       MorePanel,

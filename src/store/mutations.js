@@ -6,7 +6,6 @@ export const state = {
     },
     'showId':'-KqJ3X1UZtOJG6H7X3Fv',
     'series': 'Game of Thrones',
-    'subheading': 'The Dragon and the Wolf',
     'imgsrc': 'https://static.episodate.com/images/tv-show/full/23455.jpg',
     'unwatched':{
       'season_1' : [ 1, {
