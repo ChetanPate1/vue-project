@@ -15,9 +15,9 @@ I will be converting watchlist card from my toWatch project
   <frost-glass></frost-glass>      
 </watchlist-card>
 ```
-<!-- 
+
 ### Converted Component
-[Complete Component](https://chetanpate1.github.io/vue-project/) -->
+[Complete Component](https://chetanpate1.github.io/vue-project/)
 
 ### License
 [MIT License](https://github.com/ChetanPate1/vue-project/blob/master/LICENCE)
