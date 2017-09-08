@@ -37,8 +37,6 @@
         let isOneMoreOrOneLess = episode === currentEpisode || episode === currentEpisode - 1;
         let seasonKey =  `season_${ season[0] }`;
 
-        console.log('episode', episode, 'currentEpisode', currentEpisode, isOneMoreOrOneLess);
-
         if(!isCurrentSeason || !this.aired(airDate).isAired || !isOneMoreOrOneLess){
           return;
         }
