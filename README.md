@@ -1,6 +1,6 @@
-# vue-project
-###### Vue.js + Vuex
----
+# vue-project 
+##### Vue.js + Vuex
+
 ### Converting angular component to react
 I will be converting watchlist card from my toWatch project
 
